@@ -6,8 +6,6 @@ class GitSubcommands < Formula
 
   def install
     prefix.install 'src'
-    %w(ahead branch-extras ignore license root-dir).each do |subcommand|
-      bin.install "bin/git-#{subcommand}"
-    end
+    bin.install Dir['bin/*']
   end
 end
